@@ -1,3 +1,4 @@
+/* inicio General */
 * {
     padding: 0;
     margin: 0;
@@ -22,9 +23,17 @@ body {
 
 .menu {
     display: none;
-
+    cursor: pointer;
 }
 
+.inactive {
+    display: none;
+}
+
+/* Fin general */
+
+
+/* inicio navbar */
 nav {
     display: flex;
     justify-content: space-between;
@@ -95,12 +104,10 @@ nav {
     align-items: center;
 }
 
+/* fin navbar */
 
 
-.inactive {
-    display: none;
-}
-
+/*Inicio desktop menu*/
 .desktop-menu {
     position: absolute;
     /* width: 100px; */
@@ -111,7 +118,7 @@ nav {
     background-color: var(--white);
     top: 60px;
     right: 60px;
-    
+
 }
 
 .desktop-menu ul {
@@ -146,10 +153,57 @@ nav {
     display: inline-block;
 }
 
+/* Fin desktop menu */
+
+/* Inicio mobile menu */
+.mobile-menu {
+    padding: 24px;
+    position: absolute;
+}
+
+.mobile-menu a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    /* margin-bottom: 24px; */
+}
+
+.mobile-menu ul {
+    padding: 0;
+    margin: 24px 0 0;
+    list-style: none;
+}
+
+.mobile-menu ul:nth-child(1) {
+    border-bottom: 1px solid var(--very-light-pink);
+}
+
+.mobile-menu ul li {
+    margin-bottom: 24px;
+}
+
+.email {
+    font-size: var(--sm);
+    font-weight: 300 !important;
+}
+
+.sign-out {
+    font-size: var(--sm);
+    color: var(--hospital-green) !important;
+}
+/* Fin mobile menu */
+
+
+
+
 
 @media (max-width: 640px) {
     .menu {
         display: block;
+    }
+
+    .mobile-menu {
+        /* display: block; */
     }
 
     .navbar-left ul {
@@ -157,6 +211,15 @@ nav {
     }
 
     .navbar-email {
+        display: none;
+    }
+
+    .desktop-menu {
+        display: none;
+    }
+}
+@media (min-width: 641px) {
+    .mobile-menu {
         display: none;
     }
 }
